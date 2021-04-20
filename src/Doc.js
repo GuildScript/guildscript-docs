@@ -10,8 +10,7 @@ const DocInterface = require('./DocInterface')
 
 const docCache = new Map()
 
-const DJS = 'discordjs'
-const AKAIRO = 'discord-akairo'
+const GS = 'guildscript'
 
 function dissectURL (url) {
   const parts = url.slice(34).split('/')
@@ -47,15 +46,14 @@ class Doc extends DocBase {
 
   get baseURL () {
     switch (this.project) {
-      case DJS: return 'https://discord.js.org'
-      case AKAIRO: return 'https://discord-akairo.github.io'
+      case GS: return 'https://guildscript.github.io'
       default: return null
     }
   }
 
   get baseDocsURL () {
     if (!this.baseURL) return null
-    const repo = ['discord.js', AKAIRO].includes(this.repo) ? 'main' : this.repo
+    const repo = ['guildscript'].includes(this.repo) ? 'main' : this.repo
     return `${this.baseURL}/#/docs/${repo}/${this.branch}`
   }
 
@@ -66,8 +64,7 @@ class Doc extends DocBase {
 
   get color () {
     switch (this.project) {
-      case DJS: return 0x2296f3
-      case AKAIRO: return 0x87202f
+        case GS: return 0x810f85
       default: return null
     }
   }
@@ -151,11 +148,7 @@ class Doc extends DocBase {
 
   baseEmbed () {
     const title = {
-      'discord.js': 'Discord.js Docs',
-      'commando': 'Commando Docs',
-      'rpc': 'RPC Docs',
-      'discord-akairo': 'Akairo Docs',
-      'collection': 'Collection'
+      'guildscript': 'GuildScript Docs'
     }[this.repo] || this.repo
 
     return {
@@ -191,12 +184,10 @@ class Doc extends DocBase {
   static getRepoURL (id) {
     const [name, branch] = id.split('/')
     const project = {
-      main: 'discord.js',
-      commando: 'Commando',
-      rpc: 'RPC'
+        main: 'guildscript'
     }[name]
 
-    return `https://github.com/discordjs/${project}/blob/${branch}/`
+      return `https://github.com/guildscript/${project}/blob/${branch}/`
   }
 
   static sources () {

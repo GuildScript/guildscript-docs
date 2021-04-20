@@ -1,13 +1,15 @@
-## discord.js docs
+## guildscript docs
 
-A parser and wrapper for the [discord.js](https://github.com/discordjs/discord.js) docs.
+A parser and wrapper for the [guildscript](https://github.com/guildscript/guildscript) docs.
+
+Forked from [TeeSeal/discord.js-docs](https://github.com/TeeSeal/discord.js-docs).
 
 ## Usage
 
 ### Doc
 
 ```js
-const Doc = require('discord.js-docs')
+const Doc = require('guildscript-docs')
 ```
 
 ### Doc.fetch(sourceName[, options])

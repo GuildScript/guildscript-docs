@@ -1,9 +1,9 @@
 {
-  "name": "discord.js-docs",
+  "name": "guildscript-docs",
   "version": "0.1.2",
-  "description": "A discord.js docs parser and wrapper.",
+  "description": "A fork of discord.js docs for guildscript.",
   "main": "index.js",
-  "repository": "git@github.com:TeeSeal/discord.js-docs.git",
+  "repository": "git@github.com:guildscript/guildscript-docs.git",
   "author": "TeeSeal <teesealz@gmail.com>",
   "license": "MIT",
   "dependencies": {
